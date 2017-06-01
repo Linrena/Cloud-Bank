@@ -1,17 +1,36 @@
 # open-source-on-linux-one
 
-## WordPress and MariaDB
+intro
+
+## Scenarios
+
+In this journey we will show how to use a LinuxONE account to set up various installations.
+
+[Scenario One: Set up a WordPress site using docker-compose and containers readily availabe in the Docker Store](#wordpress-and-mariadb)
+[Scenario Two: Use github to create your own docker images]
+
+## Included Components
+
+- [linuxONE]
+- [Docker](https://www.docker.com)
+- [Docker Store](https://sore.docker.com)
+- [WordPress](https://workpress.com)
+- [MariaDB](https://mariadb.org)
+
+## Prerequisites
+
+Register at [LinuxONE Communinity Cloud](https://developer.ibm.com/linuxone/registration-ubuntu/) for a trial account.
+
+## Scenario One: WordPress and MariaDB
 
 We will start off with everyone's favorite demo: an installation of WordPress.
 
-## Steps
-
-1. Install docker
+### 1. Install docker
 ```text
 :~$ apt install docker.io
 ```
 
-2. Install docker-compose
+### 2. Install docker-compose
 
 Install dependencies
 
@@ -26,7 +45,7 @@ Then docker-compose itself
 sudo pip install docker-compose
 ```
 
-3. Run and install WordPress
+### 3. Run and install WordPress
 
 Now that we have docker-compose installed, we will create a docker-compose.yml
 file.  This will specifiy a couple of containers from the Docker Store that
