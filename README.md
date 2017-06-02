@@ -6,7 +6,7 @@ LinuxONE was built for open source so you can harness the agility of the open re
 
 ## Scenarios
 
-- [Scenario One: Use Docker images availabe in the Docker hub and docker-compose to run your workloads e.g. WordPress](#wordpress-and-mariadb)    
+- [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE e.g. WordPress](#scenario-one-wordpress-and-mariadb)    
 - [Scenario Two: Create your own Docker images for LinuxOne e.g. GitLab ]()    
 - [Scenario Three: Use Kubernetes on LinuxOne to run your cloud-naive workloads]()   
 
@@ -22,7 +22,7 @@ LinuxONE was built for open source so you can harness the agility of the open re
 
 Register at [LinuxONE Communinity Cloud](https://developer.ibm.com/linuxone/registration-ubuntu/) for a trial account.
 
-## Scenario One: WordPress and MariaDB
+## Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE
 
 We will start off with everyone's favorite demo: an installation of WordPress.
 
