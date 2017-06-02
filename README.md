@@ -1,6 +1,8 @@
 # Open Source Cloud-Native workloads on Linux One
 
-In this journey we will show how to run open source Cloud-Native workloads on Linux One
+Open source software has expanded from a low-cost alternative to a platform for enterprise databases, clouds and next-generation apps. These workloads need higher levels of scalability, security and availability from the underlying hardware infrastructure.
+
+LinuxONE was built for open source so you can harness the agility of the open revolution on the industry’s most secure, scalable and high-performing Linux server. In this journey we will show how to run open source Cloud-Native workloads on Linux One
 
 ## Scenarios
 
