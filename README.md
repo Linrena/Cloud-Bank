@@ -6,7 +6,7 @@ LinuxONE was built for open source so you can harness the agility of the open re
 
 ## Scenarios
 
-- [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE e.g. WordPress](#scenario-one-wordpress-and-mariadb)    
+- [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE e.g. WordPress](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)    
 - [Scenario Two: Create your own Docker images for LinuxOne e.g. GitLab ]()    
 - [Scenario Three: Use Kubernetes on LinuxOne to run your cloud-naive workloads]()   
 
@@ -89,3 +89,11 @@ ubuntu_mysql_1       /docker-entrypoint.sh mysq ...   Up      3306/tcp
 ubuntu_wordpress_1   /entrypoint.sh apache2-for ...   Up      0.0.0.0:8080->80/tcp
 ```
 and if all is well, you can see your new blog at localhost:8080
+
+## Scenario Two: Create your own Docker images for LinuxOne
+
+We will use very popular repository, GitLab for this example.
+
+## Scenario Three: Use Kubernetes on LinuxOne to run your cloud-naive workloads
+
+Coming soon
