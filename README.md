@@ -1,13 +1,12 @@
-# open-source-on-linux-one
+# Open Source Cloud-Native workloads on Linux One
 
-intro
+In this journey we will show how to run open source Cloud-Native workloads on Linux One
 
 ## Scenarios
 
-In this journey we will show how to use a LinuxONE account to set up various installations.
-
-[Scenario One: Set up a WordPress site using docker-compose and containers readily availabe in the Docker Store](#wordpress-and-mariadb)
-[Scenario Two: Use github to create your own docker images]
+[Scenario One: Use Docker images availabe in the Docker hub and docker-compose to run your workloads e.g. WordPress](#wordpress-and-mariadb)
+[Scenario Two: Create your own Docker images for LinuxOne e.e GitLab ]()
+[Scenario Three: Use Kubernetes on LinuxOne to run your cloud-naive workloads]()
 
 ## Included Components
 
