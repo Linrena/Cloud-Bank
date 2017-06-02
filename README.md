@@ -4,9 +4,9 @@ In this journey we will show how to run open source Cloud-Native workloads on Li
 
 ## Scenarios
 
-[Scenario One: Use Docker images availabe in the Docker hub and docker-compose to run your workloads e.g. WordPress](#wordpress-and-mariadb)
-[Scenario Two: Create your own Docker images for LinuxOne e.e GitLab ]()
-[Scenario Three: Use Kubernetes on LinuxOne to run your cloud-naive workloads]()
+[Scenario One: Use Docker images availabe in the Docker hub and docker-compose to run your workloads e.g. WordPress](#wordpress-and-mariadb)    
+[Scenario Two: Create your own Docker images for LinuxOne e.e GitLab ]()    
+[Scenario Three: Use Kubernetes on LinuxOne to run your cloud-naive workloads]()   
 
 ## Included Components
 
