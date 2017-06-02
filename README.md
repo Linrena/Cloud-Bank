@@ -12,7 +12,7 @@ LinuxONE was built for open source so you can harness the agility of the open re
 
 ## Included Components
 
-- [linuxONE]
+- [LinuxONE](https://www-03.ibm.com/systems/linuxone/open-source/index.html)
 - [Docker](https://www.docker.com)
 - [Docker Store](https://sore.docker.com)
 - [WordPress](https://workpress.com)
