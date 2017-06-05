@@ -2,13 +2,13 @@
 
 Open source software has expanded from a low-cost alternative to a platform for enterprise databases, clouds and next-generation apps. These workloads need higher levels of scalability, security and availability from the underlying hardware infrastructure.
 
-LinuxONE was built for open source so you can harness the agility of the open revolution on the industry’s most secure, scalable and high-performing Linux server. In this journey we will show how to run open source Cloud-Native workloads on Linux One
+LinuxONE was built for open source so you can harness the agility of the open revolution on the industry’s most secure, scalable and high-performing Linux server. In this journey we will show how to run open source Cloud-Native workloads on LinuxONE
 
 ## Scenarios
 
 - [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE e.g. WordPress](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)    
-- [Scenario Two: Create your own Docker images for LinuxOne e.g. GitLab ](#scenario-two-create-your-own-docker-images-for-linuxone)    
-- [Scenario Three: Use Kubernetes on LinuxOne to run your cloud-naive workloads](#scenario-three-use-kubernetes-on-linuxone-to-run-your-cloud-naive-workloads)   
+- [Scenario Two: Create your own Docker images for LinuxONE e.g. GitLab ](#scenario-two-create-your-own-docker-images-for-linuxone)
+- [Scenario Three: Use Kubernetes on LinuxONE to run your cloud-naive workloads](#scenario-three-use-kubernetes-on-linuxone-to-run-your-cloud-naive-workloads)   
 
 ## Included Components
 
@@ -90,10 +90,10 @@ ubuntu_wordpress_1   /entrypoint.sh apache2-for ...   Up      0.0.0.0:8080->80/t
 ```
 and if all is well, you can see your new blog at localhost:8080
 
-## Scenario Two: Create your own Docker images for LinuxOne
+## Scenario Two: Create your own Docker images for LinuxONE
 
 We will use very popular repository, GitLab for this example.
 
-## Scenario Three: Use Kubernetes on LinuxOne to run your cloud-naive workloads
+## Scenario Three: Use Kubernetes on LinuxONE to run your cloud-naive workloads
 
 Coming soon
