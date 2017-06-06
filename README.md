@@ -24,6 +24,10 @@ Register at [LinuxONE Communinity Cloud](https://developer.ibm.com/linuxone/regi
 
 ## Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE
 
+[Docker Hub](https://hub.docker.com) makes it rather simple to get started with
+containers, as there are quite a few images ready to for your to use.  You can
+browse the list of images that are compatable with LinuxONE by doing a search
+on the ['s390x'](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=s390x&starCount=0) tag.
 We will start off with everyone's favorite demo: an installation of WordPress.
 
 ### 1. Install docker
@@ -92,7 +96,13 @@ and if all is well, you can see your new blog at localhost:8080
 
 ## Scenario Two: Create your own Docker images for LinuxONE
 
-We will use very popular repository, GitLab for this example.
+In our previous scenario, we used a couple of container images that had already
+been created and were waiting for our use in the Docker Hub Community.  But
+what if you are looking to run a workload that is not currently available
+there?  In this scenario, we will walk through the steps to create your own
+Docker images.  It helps to start with a base OS image; in this case we will be
+using Ubuntu ([s390x/ubuntu](https://hub.docker.com/r/s390x/ubuntu/)).  On top
+of which, we will use very popular repository, GitLab for this example.
 
 ## Scenario Three: Use Kubernetes on LinuxONE to run your cloud-naive workloads
 
