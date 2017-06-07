@@ -20,7 +20,9 @@ LinuxONE was built for open source so you can harness the agility of the open re
 
 ## Prerequisites
 
-Register at [LinuxONE Communinity Cloud](https://developer.ibm.com/linuxone/registration-ubuntu/) for a trial account.
+Register at [LinuxONE Communinity Cloud](https://developer.ibm.com/linuxone/) for a trial account.
+We will be using a Ret Hat base image for this journey, so be sure to chose the
+'Request your trial' button on the left side of this page.
 
 ## Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE
 
@@ -29,10 +31,12 @@ containers, as there are quite a few images ready to for your to use.  You can
 browse the list of images that are compatable with LinuxONE by doing a search
 on the ['s390x'](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=s390x&starCount=0) tag.
 We will start off with everyone's favorite demo: an installation of WordPress.
+These instructions assume a base RHEL 7.2 image.  If you are using Ubuntu,
+please follow the separate [instructions](docs/ubuntu.md)
 
 ### 1. Install docker
 ```text
-:~$ apt install docker.io
+:~$ yum install docker.io
 ```
 
 ### 2. Install docker-compose
@@ -40,12 +44,22 @@ We will start off with everyone's favorite demo: an installation of WordPress.
 Install dependencies
 
 ```text
-sudo apt-get update
-sudo apt-get install -y python-pip
-pip install --upgrade
+sudo yum install -y python-setuptools
 ```
 
-Then docker-compose itself
+Install pip with easy_install
+
+```text
+sudo easy_install pip
+```
+
+Upgrade backports.ssl_match_hostname
+
+```text
+sudo pip install backports.ssl_match_hostname --upgrade
+```
+
+Finally, install docker-compose itself
 ```text
 sudo pip install docker-compose
 ```
