@@ -31,10 +31,12 @@ containers, as there are quite a few images ready to for your to use.  You can
 browse the list of images that are compatable with LinuxONE by doing a search
 on the ['s390x'](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=s390x&starCount=0) tag.
 We will start off with everyone's favorite demo: an installation of WordPress.
+These instructions assume a base RHEL 7.2 image.  If you are using Ubuntu,
+please follow the separate [instructions](docs/ubuntu.md)
 
 ### 1. Install docker
 ```text
-:~$ apt install docker.io
+:~$ yum install docker.io
 ```
 
 ### 2. Install docker-compose
