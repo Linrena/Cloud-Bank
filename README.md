@@ -118,6 +118,29 @@ Docker images.  It helps to start with a base OS image; in this case we will be
 using Ubuntu ([s390x/ubuntu](https://hub.docker.com/r/s390x/ubuntu/)).  On top
 of which, we will use very popular repository, GitLab for this example.
 
+### 1. Setup
+
+First, let's create a directory for our scenario:
+
+```text
+$ mkdir gitlabexercise
+$ cd gitlabexercise
+```
+
+You will also need a `requirements.txt` file in the directory with the contents:
+
+```text
+gitlab
+postgres
+redis
+```
+
+### 2. Create Dockerfiles
+
+Next we need to write a few Dockerfiles to build our Docker images.  In the
+project directory, create the following three files with their respective
+content:
+
 Dockerfile-gitlab
 ```text
 FROM s390x/ubuntu
@@ -289,6 +312,17 @@ RUN         apt-get update && apt-get upgrade -y && apt-get install -y redis-ser
 EXPOSE      6379
 
 ENTRYPOINT  ["/usr/bin/redis-server"]
+```
+
+### 3. Define service in a Compose file
+
+Again, we are going to use docker-compose to manage our Docker images.  In the
+project directory, create a `docker-compose.yml' file that contains:
+
+### 4. Build and run
+
+```text
+$ docker-compose up
 ```
 
 ## Scenario Three: Use Kubernetes on LinuxONE to run your cloud-naive workloads
