@@ -260,7 +260,7 @@ ENTRYPOINT  ["/usr/bin/redis-server"]
 ### 3. Define service in a Compose file
 
 Again, we are going to use docker-compose to manage our Docker images.  In the
-project directory, create a `docker-compose.yml' file that contains:
+project directory, create a `docker-compose.yml` file that contains:
 
 ### 4. Build and run
 
