@@ -1,4 +1,4 @@
-# Run open source Cloud Native workloads on LinuxONE
+# Build and run open source cloud native workloads on LinuxONE using Docker
 
 Open source software has expanded from a low-cost alternative to a platform for enterprise databases, clouds and next-generation apps. These workloads need higher levels of scalability, security and availability from the underlying hardware infrastructure.
 
@@ -11,7 +11,7 @@ LinuxONE was built for open source so you can harness the agility of the open re
 1.2 [WebSphere Liberty](#2-install-and-run-websphere-liberty)  
 2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)  
 2.1 [GitLab](#1-install-and-run-gitlab)  
-3. [Scenario Three: Use container orchestrator on LinuxONE to run your cloud-naive workloads](#scenario-three-use-container-orechestrator-on-linuxone-to-run-your-cloud-naive-workloads)  
+3. [Scenario Three: Use container orchestrator on LinuxONE to run your cloud-native workloads](#scenario-three-use-container-orechestrator-on-linuxone-to-run-your-cloud-native-workloads)  
 3.1 [Kubernetes](#1-install-and-run-kubernetes)
 
 ## Included Components
@@ -116,7 +116,7 @@ GitLab is famous for its Git-based and code-tracking tool. GitLab represents a t
 By using different GitLab components (NGINX, Ruby on Rails, Redis, PostgreSQL, and more), you can deploy it to LinuxONE. Please follow the instructions [here](https://github.com/IBM/Kubernetes-container-service-GitLab-sample/blob/master/docs/deploy-with-docker-on-linuxone.md
 ) to get it up and running 
 
-## Scenario Three: Use container orechestrator on LinuxONE to run your cloud-naive workloads
+## Scenario Three: Use container orechestrator on LinuxONE to run your cloud-native workloads
 
 ### 1. Install and run Kubernetes
 
