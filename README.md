@@ -1,4 +1,4 @@
-# Run your open source Cloud Native workload on LinuxONE
+# Run open source Cloud Native workloads on LinuxONE
 
 Open source software has expanded from a low-cost alternative to a platform for enterprise databases, clouds and next-generation apps. These workloads need higher levels of scalability, security and availability from the underlying hardware infrastructure.
 
