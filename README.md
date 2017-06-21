@@ -2,7 +2,10 @@
 
 Open source software has expanded from a low-cost alternative to a platform for enterprise databases, clouds and next-generation apps. These workloads need higher levels of scalability, security and availability from the underlying hardware infrastructure.
 
-LinuxONE was built for open source so you can harness the agility of the open revolution on the industry’s most secure, scalable and high-performing Linux server. In this journey we will show how to run open source Cloud-Native workloads on LinuxONE
+LinuxONE was built for open source so you can harness the agility of the open revolution on the industry’s most secure, scalable and high-performing Linux server. In this journey we will show how to run open source Cloud-Native workloads on LinuxONE using Docker. We will show how existing LinuxONE docker images from docker hub can be used as is for deploying open source workloads. If the desired images don`t exist, we also show how you can create your own dokcer images for the workload.
+In addition, we also show how to launch a container orechestration platform like Kubernetes, which can then be used to host your container based workloads.
+
+![linuxonedocker](images/linuxone-docker.png)
 
 ## Scenarios  
 
