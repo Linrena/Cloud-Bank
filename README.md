@@ -37,8 +37,15 @@ Register at [LinuxONE Communinity Cloud](https://developer.ibm.com/linuxone/) fo
 These instructions assume a base RHEL 7.2 image. 
 
 ### Install docker
+First, we will need to download the correct Docker package archive from [this page](https://www.ibm.com/developerworks/linux/linux390/docker.html).  For version 1.11.2 on RHEL 7.2:
 ```text
-:~$ yum install docker.io
+$ wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.2/docker-1.11.2-rhel7.2-20160623.tar.gz
+```
+
+Then, unpack the archive and copy the docker binary:
+```text
+$ tar -xzvf docker-1.11.2-rhel7.2-20160623.tar.gz
+$ cp docker-1.11.2.rhel7.2-20160623/docker /usr/local/bin
 ```
 
 ### Install docker-compose
