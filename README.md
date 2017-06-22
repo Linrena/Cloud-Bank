@@ -3,7 +3,6 @@
 Open source software has expanded from a low-cost alternative to a platform for enterprise databases, clouds and next-generation apps. These workloads need higher levels of scalability, security and availability from the underlying hardware infrastructure.
 
 LinuxONE was built for open source so you can harness the agility of the open revolution on the industry’s most secure, scalable and high-performing Linux server. In this journey we will show how to run open source Cloud-Native workloads on LinuxONE using Docker. We will show how existing LinuxONE docker images from docker hub can be used as is for deploying open source workloads. If the desired images don`t exist, we also show how you can create your own dokcer images for the workload.
-In addition, we also show how to launch a container orechestration platform like Kubernetes, which can then be used to host your container based workloads.
 
 ![linuxonedocker](images/linuxone-docker.png)
 
@@ -14,8 +13,6 @@ In addition, we also show how to launch a container orechestration platform like
 1.2 [WebSphere Liberty](#2-install-and-run-websphere-liberty)  
 2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)  
 2.1 [GitLab](#1-install-and-run-gitlab)  
-3. [Scenario Three: Use container orchestrator on LinuxONE to run your cloud-native workloads](#scenario-three-use-container-orechestrator-on-linuxone-to-run-your-cloud-native-workloads)  
-3.1 [Kubernetes](#1-install-and-run-kubernetes)
 
 ## Included Components
 
@@ -24,7 +21,6 @@ In addition, we also show how to launch a container orechestration platform like
 - [WordPress](https://workpress.com)
 - [GitLab](https://about.gitlab.com/)
 - [WebSphere Liberty](https://hub.docker.com/r/s390x/websphere-liberty/)
-- [Kubernetes](https://kubernetes.io/)
 
 ## Prerequisites
 
@@ -125,85 +121,4 @@ GitLab is famous for its Git-based and code-tracking tool. GitLab represents a t
 
 By using different GitLab components (NGINX, Ruby on Rails, Redis, PostgreSQL, and more), you can deploy it to LinuxONE. Please follow the instructions [here](https://github.com/IBM/Kubernetes-container-service-GitLab-sample/blob/master/docs/deploy-with-docker-on-linuxone.md
 ) to get it up and running 
-
-## Scenario Three: Use container orechestrator on LinuxONE to run your cloud-native workloads
-
-### 1. Install and run Kubernetes
-
-To begin with, we will set up a Kubernetes cluster.  A cluster requires a number of containers, namely: an `apiserver`, a `scheduler`, a `controller` and a `proxy` service.  We will start these individually.
-
-#### 1. Start the etcd service
-```text
-docker run -d \
---net=host \
---name=etcd \
-brunswickheads/kubernetes-s390x etcd --addr=127.0.0.1:4001 --bind-addr=0.0.0.0:4001 --data-dir=/var/etcd/data
-```
-
-#### 2. Start kubelet service
-```text
-docker run \
---volume=/:/rootfs:ro \
---volume=/sys:/sys:ro \
---volume=/var/lib/docker/:/var/lib/docker:ro \
---volume=/var/data/kubelet:/var/data/kubelet/:rw \
---volume=/var/run:/var/run:rw \
---net=host \
---privileged=true \
--d \
---name=kubelet \
-brunswickheads/kubernetes-s390x:latest \
-hyperkube kubelet --containerized --root-dir=/var/data/kubelet --hostname-override="127.0.0.1" --address="0.0.0.0" --api-servers=http://localhost:8080 --config=/etc/kubernetes/manifests
-```
-
-#### 3. Start apiserver service
-```text
-docker run \
---volume=/:/rootfs:ro \
---volume=/sys:/sys:ro \
---volume=/var/lib/docker/:/var/lib/docker:ro \
---volume=/var/data/kubelet:/var/data/kubelet/:rw \
---volume=/var/run:/var/run:rw \
---net=host \
---privileged=true \
--d \
---name=apiserver \
-brunswickheads/kubernetes-s390x:latest \
-hyperkube apiserver --portal_net=10.0.0.1/24 --address=0.0.0.0 --insecure-bind-address=0.0.0.0 --etcd_servers=http://127.0.0.1:4001 --cluster_name=kubernetes --v=2
-```
-
-#### 4. Start controller service
-```text
-docker run \
--d \
---net=host \
--v /var/run/docker.sock:/var/run/docker.sock \
---name=controller \
-brunswickheads/kubernetes-s390x:latest hyperkube controller-manager --master=127.0.0.1:8080 --v=2
-```
-
-#### 5. Start scheduler service
-```text
-docker run \
--d \
---net=host \
--v /var/run/docker.sock:/var/run/docker.sock \
---name=scheduler \
-brunswickheads/kubernetes-s390x:latest hyperkube scheduler --master=127.0.0.1:8080 --v=2
-```
-
-#### 6. Start proxy service
-```text
-docker run \
--d \
---net=host \
---privileged \
---name=proxy \
-brunswickheads/kubernetes-s390x:latest hyperkube proxy --master=http://127.0.0.1:8080 --v=2
-```
-
-#### 7. Create a pause imaging by adding a tag to the kubernetes image:
-```text
-docker tag <k8s_image_name>:latest gcr.io/google_containers/pause:0.8.0
-```
 
