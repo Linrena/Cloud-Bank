@@ -6,31 +6,31 @@ LinuxONE was built for open source so you can harness the agility of the open re
 
 ![linuxonedocker](images/linuxone-docker.png)
 
-## Scenarios  
+## Scenarios
 
-1. [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)  
-1.1 [WordPress](#1-install-and-run-wordpress)  
-1.2 [WebSphere Liberty](#2-install-and-run-websphere-liberty)  
-2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)  
-2.1 [GitLab](#1-install-and-run-gitlab)  
+1. [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)
+1.1 [WordPress](#1-install-and-run-wordpress)
+1.2 [WebSphere Liberty](#2-install-and-run-websphere-liberty)
+2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)
+2.1 [GitLab](#1-install-and-run-gitlab)
 
 ## Included Components
 
-- [LinuxONE](https://www-03.ibm.com/systems/linuxone/open-source/index.html)
+- [LinuxONE](https://www.ibm.com/linuxone/open-source)
 - [Docker](https://www.docker.com)
-- [WordPress](https://workpress.com)
+- [WordPress](https://wordpress.org/about/)
 - [GitLab](https://about.gitlab.com/)
 - [WebSphere Liberty](https://hub.docker.com/r/s390x/websphere-liberty/)
 
 ## Prerequisites
 
-Register at [LinuxONE Communinity Cloud](https://developer.ibm.com/linuxone/) for a trial account. We will be using a Ret Hat base image for this journey, so be sure to chose the 'Request your trial' button on the left side of this page.
+Register at [LinuxONE Community Cloud](https://developer.ibm.com/linuxone/) for a trial account. We will be using a Ret Hat base image for this journey, so be sure to chose the 'Request your trial' button on the left side of this page.
 
 ## Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE
 
-[Docker Hub](https://hub.docker.com) makes it rather simple to get started with containers, as there are quite a few images ready to for your to use.  You can browse the list of images that are compatable with LinuxONE by doing a search on the ['s390x'](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=s390x&starCount=0) tag. 
+[Docker Hub](https://hub.docker.com) makes it rather simple to get started with containers, as there are quite a few images ready to for your to use.  You can browse the list of images that are compatible with LinuxONE by doing a search on the ['s390x'](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=s390x&starCount=0) tag.
 
-These instructions assume a base RHEL 7.2 image. 
+These instructions assume a base RHEL 7.2 image.
 
 ### Install docker
 First, we will need to download the correct Docker package archive from [this page](https://www.ibm.com/developerworks/linux/linux390/docker.html).  For version 1.11.2 on RHEL 7.2:
@@ -75,11 +75,11 @@ Let's start off with everyone's favorite demo: an installation of WordPress. The
 
 ### 2. Install and run WebSphere Liberty
 
-In this step, we will once again be using existing images from Docker Hub - this time to set up a WebSphere Application Server.  We will be implementing it for Java EE7 Full Platform compliance.
+In this step, we will once again be using existing images from Docker Hub - this time to set up a WebSphere Application Server.  We will be implementing it for Java EE 7 Full Platform compliance.
 
 ### 1. Setup
 
-Our implemetation of WebSphere will be based off the [application deployment sample (https://developer.ibm.com/wasdev/docs/article_appdeployment/), which means we will first need to download the DefaultServletEngine sample and extract it to `/tmp`:
+Our implementation of WebSphere will be based off the [application deployment sample (https://developer.ibm.com/wasdev/docs/article_appdeployment/), which means we will first need to download the DefaultServletEngine sample and extract it to `/tmp`:
 
 ```text
 wget https://github.com/WASdev/sample.servlet/releases/download/V1/DefaultServletEngine.zip
@@ -113,12 +113,12 @@ Once the server is started, you can browse to
 
 ## Scenario Two: Create your own Docker images for LinuxONE
 
-In our previous scenario, we used a couple of container images that had already been created and were waiting for our use in the Docker Hub Community.  But what if you are looking to run a workload that is not currently available there?  In this scenario, we will walk through the steps to create your own Docker images. 
+In our previous scenario, we used a couple of container images that had already been created and were waiting for our use in the Docker Hub Community.  But what if you are looking to run a workload that is not currently available there?  In this scenario, we will walk through the steps to create your own Docker images.
 
 ### 1. Install and run GitLab
 
 GitLab is famous for its Git-based and code-tracking tool. GitLab represents a typical multi-tier app and each component will have their own container(s). The microservice containers will be for the web tier, the state/job database with Redis and PostgreSQL as the database.
 
 By using different GitLab components (NGINX, Ruby on Rails, Redis, PostgreSQL, and more), you can deploy it to LinuxONE. Please follow the instructions [here](https://github.com/IBM/Kubernetes-container-service-GitLab-sample/blob/master/docs/deploy-with-docker-on-linuxone.md
-) to get it up and running 
+) to get it up and running
 
