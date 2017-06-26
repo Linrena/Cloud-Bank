@@ -8,11 +8,11 @@ LinuxONE was built for open source so you can harness the agility of the open re
 
 ## Scenarios
 
-1. [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)
-1.1 [WordPress](#1-install-and-run-wordpress)
-1.2 [WebSphere Liberty](#2-install-and-run-websphere-liberty)
-2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)
-2.1 [GitLab](#1-install-and-run-gitlab)
+1. [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)    
+    1.1 [WordPress](#1-install-and-run-wordpress)     
+    1.2 [WebSphere Liberty](#2-install-and-run-websphere-liberty)
+2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)     
+    2.1 [GitLab](#1-install-and-run-gitlab)
 
 ## Included Components
 
