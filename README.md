@@ -38,10 +38,40 @@ First, we will need to download the correct Docker package archive from [this pa
 $ wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.2/docker-1.11.2-rhel7.2-20160623.tar.gz
 ```
 
-Then, unpack the archive and copy the docker binary:
+Then, unpack the archive and copy the docker binarys:
 ```text
 $ tar -xzvf docker-1.11.2-rhel7.2-20160623.tar.gz
-$ cp docker-1.11.2-rhel7.2-20160623/docker /usr/local/bin/
+$ cp docker-1.11.2-rhel7.2-20160623/docker* /usr/local/bin/
+```
+
+Switch to root:
+```text
+$ sudo su -
+```
+
+And then start the docker daemon:
+```text
+# docker daemon -g /local/docker/lib &
+```
+You should see something similar to this:
+```text
+[root@devjourney07 ~]# docker daemon -g /local/docker/lib &
+[1] 2332
+[root@devjourney07 ~]# INFO[0000] New containerd process, pid: 2338
+           
+WARN[0000] containerd: low RLIMIT_NOFILE changing to max  current=1024 max=4096
+WARN[0001] devmapper: Usage of loopback devices is strongly discouraged for production use. Please use `--storage-opt dm.thinpooldev` or use `man docker` to refer to dm.thinpooldev section. 
+INFO[0001] devmapper: Creating filesystem xfs on device docker-94:2-263097-base 
+INFO[0001] devmapper: Successfully created filesystem xfs on device docker-94:2-263097-base 
+INFO[0001] Graph migration to content-addressability took 0.00 seconds 
+INFO[0001] Firewalld running: false                     
+INFO[0001] Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address 
+INFO[0001] Loading containers: start.                   
+
+INFO[0001] Loading containers: done.                    
+INFO[0001] Daemon has completed initialization          
+INFO[0001] Docker daemon                                 commit=b9f10c9-unsupported graphdriver=devicemapper version=1.11.2
+INFO[0001] API listen on /var/run/docker.sock
 ```
 
 ### Install docker-compose
