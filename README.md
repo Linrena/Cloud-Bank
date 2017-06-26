@@ -79,7 +79,7 @@ In this step, we will once again be using existing images from Docker Hub - this
 
 ### 1. Setup
 
-Our implementation of WebSphere will be based off the [application deployment sample (https://developer.ibm.com/wasdev/docs/article_appdeployment/), which means we will first need to download the DefaultServletEngine sample and extract it to `/tmp`:
+Our implementation of WebSphere will be based off the [application deployment sample](https://developer.ibm.com/wasdev/docs/article_appdeployment/), which means we will first need to download the DefaultServletEngine sample and extract it to `/tmp`:
 
 ```text
 wget https://github.com/WASdev/sample.servlet/releases/download/V1/DefaultServletEngine.zip
