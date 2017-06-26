@@ -41,7 +41,7 @@ $ wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.2/docker-1.11.2-rh
 Then, unpack the archive and copy the docker binary:
 ```text
 $ tar -xzvf docker-1.11.2-rhel7.2-20160623.tar.gz
-$ cp docker-1.11.2.rhel7.2-20160623/docker /usr/local/bin
+$ cp docker-1.11.2-rhel7.2-20160623/docker /usr/local/bin/
 ```
 
 ### Install docker-compose
