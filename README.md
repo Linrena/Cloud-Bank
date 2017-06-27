@@ -9,8 +9,8 @@ LinuxONE was built for open source so you can harness the agility of the open re
 ## Scenarios
 
 1. [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)     
-    1.1 [WordPress](#1-install-and-run-wordpress)     
-    1.2 [WebSphere Liberty](#2-install-and-run-websphere-liberty)     
+    1.1 [WebSphere Liberty](#1-install-and-run-websphere-liberty)     
+    1.2 [WordPress](#2-install-and-run-wordpress)          
 2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)     
     2.1 [GitLab](#1-install-and-run-gitlab)
 
@@ -98,12 +98,7 @@ Finally, install docker-compose itself
 ```shell
 # pip install docker-compose
 ```
-
-### 1. Install and run WordPress
-
-Let's start off with everyone's favorite demo: an installation of WordPress. These instructions assume a base RHEL 7.2 image. Please follow the instructions [here](https://github.com/IBM/Scalable-WordPress-deployment-on-Kubernetes/blob/master/docs/deploy-with-docker-on-linuxone.md#steps) to Install and run WordPress on LinuxOne
-
-### 2. Install and run WebSphere Liberty
+### 1. Install and run WebSphere Liberty
 
 In this step, we will once again be using existing images from Docker Hub - this time to set up a WebSphere Application Server.  We will be implementing it for Java EE 7 Full Platform compliance.
 
@@ -121,6 +116,10 @@ Once the server is started, you can browse to
 `http://[LinuxOne Host IP]`.
 
 ![WebSphere Liberty](images/websphereliberty.png)
+
+### 2. Install and run WordPress
+
+Let's start off with everyone's favorite demo: an installation of WordPress. These instructions assume a base RHEL 7.2 image. Please follow the instructions [here](https://github.com/IBM/Scalable-WordPress-deployment-on-Kubernetes/blob/master/docs/deploy-with-docker-on-linuxone.md#steps) to Install and run WordPress on LinuxOne
 
 ## Scenario Two: Create your own Docker images for LinuxONE
 
