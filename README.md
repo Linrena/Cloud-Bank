@@ -8,10 +8,10 @@ LinuxONE was built for open source so you can harness the agility of the open re
 
 ## Scenarios
 
-1. [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)    
-    1.1 [WordPress](#1-install-and-run-wordpress)     
+1. [Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE](#scenario-one-use-docker-images-from-docker-hub-to-run-your-workloads-on-linuxone)
+    1.1 [WordPress](#1-install-and-run-wordpress)
     1.2 [WebSphere Liberty](#2-install-and-run-websphere-liberty)
-2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)     
+2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)
     2.1 [GitLab](#1-install-and-run-gitlab)
 
 ## Included Components
@@ -32,44 +32,44 @@ Register at [LinuxONE Community Cloud](https://developer.ibm.com/linuxone/) for 
 
 These instructions assume a base RHEL 7.2 image.
 
-### Install docker
-First, we will need to download the correct Docker package archive from [this page](https://www.ibm.com/developerworks/linux/linux390/docker.html).  For version 1.11.2 on RHEL 7.2:
-```text
-$ wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.2/docker-1.11.2-rhel7.2-20160623.tar.gz
-```
-
-Then, unpack the archive and copy the docker binarys:
-```text
-$ tar -xzvf docker-1.11.2-rhel7.2-20160623.tar.gz
-$ cp docker-1.11.2-rhel7.2-20160623/docker* /usr/local/bin/
-```
-
-Switch to root:
-```text
+We need to be running as root:
+```shell
 $ sudo su -
 ```
 
+### Install docker
+First, we will need to download the correct Docker package archive from [this page](https://www.ibm.com/developerworks/linux/linux390/docker.html).  For version 1.11.2 on RHEL 7.2:
+```shell
+# wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.2/docker-1.11.2-rhel7.2-20160623.tar.gz
+```
+
+Then, unpack the archive and copy the docker binarys:
+```shell
+# tar -xzvf docker-1.11.2-rhel7.2-20160623.tar.gz
+# cp docker-1.11.2-rhel7.2-20160623/docker* /usr/local/bin/
+```
+
 And then start the docker daemon:
-```text
+```shell
 # docker daemon -g /local/docker/lib &
 ```
 You should see something similar to this:
-```text
+```shell
 [root@devjourney07 ~]# docker daemon -g /local/docker/lib &
 [1] 2332
 [root@devjourney07 ~]# INFO[0000] New containerd process, pid: 2338
-           
-WARN[0000] containerd: low RLIMIT_NOFILE changing to max  current=1024 max=4096
-WARN[0001] devmapper: Usage of loopback devices is strongly discouraged for production use. Please use `--storage-opt dm.thinpooldev` or use `man docker` to refer to dm.thinpooldev section. 
-INFO[0001] devmapper: Creating filesystem xfs on device docker-94:2-263097-base 
-INFO[0001] devmapper: Successfully created filesystem xfs on device docker-94:2-263097-base 
-INFO[0001] Graph migration to content-addressability took 0.00 seconds 
-INFO[0001] Firewalld running: false                     
-INFO[0001] Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address 
-INFO[0001] Loading containers: start.                   
 
-INFO[0001] Loading containers: done.                    
-INFO[0001] Daemon has completed initialization          
+WARN[0000] containerd: low RLIMIT_NOFILE changing to max  current=1024 max=4096
+WARN[0001] devmapper: Usage of loopback devices is strongly discouraged for production use. Please use `--storage-opt dm.thinpooldev` or use `man docker` to refer to dm.thinpooldev section.
+INFO[0001] devmapper: Creating filesystem xfs on device docker-94:2-263097-base
+INFO[0001] devmapper: Successfully created filesystem xfs on device docker-94:2-263097-base
+INFO[0001] Graph migration to content-addressability took 0.00 seconds
+INFO[0001] Firewalld running: false
+INFO[0001] Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address
+INFO[0001] Loading containers: start.
+
+INFO[0001] Loading containers: done.
+INFO[0001] Daemon has completed initialization
 INFO[0001] Docker daemon                                 commit=b9f10c9-unsupported graphdriver=devicemapper version=1.11.2
 INFO[0001] API listen on /var/run/docker.sock
 ```
@@ -78,25 +78,25 @@ INFO[0001] API listen on /var/run/docker.sock
 
 Install dependencies
 
-```text
-sudo yum install -y python-setuptools
+```shell
+# yum install -y python-setuptools
 ```
 
 Install pip with easy_install
 
-```text
-sudo easy_install pip
+```shell
+# easy_install pip
 ```
 
 Upgrade backports.ssl_match_hostname
 
-```text
-sudo pip install backports.ssl_match_hostname --upgrade
+```shell
+# pip install backports.ssl_match_hostname --upgrade
 ```
 
 Finally, install docker-compose itself
-```text
-sudo pip install docker-compose
+```shell
+# pip install docker-compose
 ```
 
 ### 1. Install and run WordPress
@@ -107,39 +107,20 @@ Let's start off with everyone's favorite demo: an installation of WordPress. The
 
 In this step, we will once again be using existing images from Docker Hub - this time to set up a WebSphere Application Server.  We will be implementing it for Java EE 7 Full Platform compliance.
 
-### 1. Setup
+#### 1. Docker Run
 
-Our implementation of WebSphere will be based off the [application deployment sample](https://developer.ibm.com/wasdev/docs/article_appdeployment/), which means we will first need to download the DefaultServletEngine sample and extract it to `/tmp`:
+Now run the container (note: we will need to be logged in as root)
 
-```text
-wget https://github.com/WASdev/sample.servlet/releases/download/V1/DefaultServletEngine.zip
-unzip DefaultServletEngine.zip -d /tmp/DefaultServletEngine
-```
-We will also need to modify the server.xml file to accept HTTP connections from outside of the container:
-
-```text
-vim server.xml
-```
-Find the `server` stanza and add the following:
-```text
-<httpEndpoint host="*" httpPort="9080" httpsPort="-1"/>
+```shell
+# docker run -d -p 80:9080 -p 443:9443 s390x/websphere-liberty:webProfile7
 ```
 
-### 2. Docker Run
-
-Now run the container
-
-```text
-$ docker run -d -p 80:9080 -p 443:9443 \
-  -v /tmp/DefaultServletEngine/dropins/Sample1.war:/config/dropins/Sample1.war \
-  websphere-liberty:webProfile7
-```
-
-### 3. Browse
+#### 2. Browse
 
 Once the server is started, you can browse to
-`http://localhost/Sample1/SimpleServlet` on the Docker host.
+`http://[LinuxOne Host IP]`.
 
+![WebSphere Liberty](images/websphereliberty.png)
 
 ## Scenario Two: Create your own Docker images for LinuxONE
 
