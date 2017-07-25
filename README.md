@@ -14,14 +14,14 @@ If the desired images don't exist, we also show how you can create your own dokc
     1.1 [WebSphere Liberty](#1-install-and-run-websphere-liberty)     
     1.2 [WordPress](#2-install-and-run-wordpress)          
 2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)     
-    2.1 [GitLab](#1-install-and-run-gitlab)
+    2.1 [MEAN Stack](#1-install-and-run-mean-application)
 
 ## Included Components
 
 - [LinuxONE](https://www.ibm.com/linuxone/open-source)
 - [Docker](https://www.docker.com)
 - [WordPress](https://wordpress.org/about/)
-- [GitLab](https://about.gitlab.com/)
+- [MEAN](https://mean.io/)
 - [WebSphere Liberty](https://hub.docker.com/r/s390x/websphere-liberty/)
 
 ## Prerequisites
@@ -127,10 +127,6 @@ Let's start off with everyone's favorite demo: an installation of WordPress. The
 
 In our previous scenario, we used a couple of container images that had already been created and were waiting for our use in the Docker Hub Community.  But what if you are looking to run a workload that is not currently available there?  In this scenario, we will walk through the steps to create your own Docker images.
 
-### 1. Install and run GitLab
+### 1. Install and run Mean Stack
 
-GitLab is famous for its Git-based and code-tracking tool. GitLab represents a typical multi-tier app and each component will have their own container(s). The microservice containers will be for the web tier, the state/job database with Redis and PostgreSQL as the database.
-
-By using different GitLab components (NGINX, Ruby on Rails, Redis, PostgreSQL, and more), you can deploy it to LinuxONE. Please follow the instructions [here](https://github.com/IBM/Kubernetes-container-service-GitLab-sample/blob/master/docs/deploy-with-docker-on-linuxone.md
-) to get it up and running
 
