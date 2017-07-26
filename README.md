@@ -128,12 +128,6 @@ Let's start off with everyone's favorite demo: an installation of WordPress. The
 
 In our previous scenario, we used a couple of container images that had already been created and were waiting for our use in the Docker Hub Community.  But what if you are looking to run a workload that is not currently available there?  In this scenario, we will walk through the steps to create your own Docker images.
 
-### 1. Install and run Mean Stack
-
-
-## Scenario Two (replace GitLab): Migrate your app to LinuxONE
-
-In our previous scenario, we used a couple of container images that had already been created and were waiting for our use in the Docker Hub Community. In this scenario we will deploy a multi-container application. The components of the docker-compose file can be built from scratch or pre-existing containers can be used from Docker Hub.
 This time we will go through the process of migrating an existing docker-compose.yaml from another architecture to the LinuxONE architecture.
 
 ### 1. Obtain the MEAN stack Docker components from GitHub
