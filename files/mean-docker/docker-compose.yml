@@ -1,0 +1,20 @@
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  angular: # name of the first service
+    build: angular-client # specify the directory of the Dockerfile
+    ports:
+      - "8000:8000" # specify port forwarding
+
+  express: #name of the second service
+    build: express-server # specify the directory of the Dockerfile
+    ports:
+      - "3000:3000" #specify ports forwarding
+    links:
+      - database
+
+  database: # name of the third service
+    image: sinenomine/mongodb-s390x # specify image to build container from
+    ports:
+      - "27017:27017" # specify port forwarding
