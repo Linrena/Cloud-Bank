@@ -1,18 +1,18 @@
 ## MEAN Docker
-App to show a Docker Compose set up for a mean application running Angular 2.
+App to show a Docker Compose set up for a mean application running Angular.
 
-## Set up
-Make sure you have docker and docker-compose installed.
-
-Docker-compose should be version 1.6 or higher.
+## Pre-requisites:
+* Docker
+* Docker Compose (v1.6+)
 
 ### Clone the repo
 ```bash
-$ git clone https://github.com/gangachris/mean-docker
+$ git clone https://github.com/IBM/Cloud-Native-Workloads-on-LinuxONE.git
 ```
+
  ### Run docker
  ```bash
  $ docker-compose up
  ```
 
- App should be running in `localhost:4200`
+ App should be running in `localhost:8080`
