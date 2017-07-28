@@ -2,14 +2,14 @@ version: '2' # specify docker-compose version
 
 # Define the services/containers to be run
 services:
-  express: #name of the second service
+  express: #name of the first service
     build: express-server # specify the directory of the Dockerfile
     ports:
       - "8080:8080" #specify ports forwarding
     links:
       - database
 
-  database: # name of the third service
+  database: # name of the second service
     image: sinenomine/mongodb-s390x # specify image to build container from
     ports:
       - "27017:27017" # specify port forwarding

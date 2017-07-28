@@ -14,7 +14,7 @@ If the desired images don't exist, we also show how you can create your own dokc
     1.1 [WebSphere Liberty](#1-install-and-run-websphere-liberty)     
     1.2 [WordPress](#2-install-and-run-wordpress)          
 2. [Scenario Two: Create your own Docker images for LinuxONE](#scenario-two-create-your-own-docker-images-for-linuxone)     
-    2.1 [MEAN Stack](#1-install-and-run-mean-application)
+    2.1 [MEAN Stack](#1-obtain-the-mean-stack-docker-components-from-github)
 
 ## Included Components
 
