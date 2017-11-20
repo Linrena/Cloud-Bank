@@ -33,7 +33,7 @@ Register at [LinuxONE Community Cloud](https://developer.ibm.com/linuxone/) for 
 
 [Docker Hub](https://hub.docker.com) makes it rather simple to get started with containers, as there are quite a few images ready to for your to use.  You can browse the list of images that are compatible with LinuxONE by doing a search on the ['s390x'](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=s390x&starCount=0) tag.
 
-These instructions assume a base RHEL 7.2 image.
+These instructions assume a base RHEL 7.3 image.
 
 We need to be running as root:
 ```shell
@@ -41,15 +41,15 @@ $ sudo su -
 ```
 
 ### Install docker
-First, we will need to download the correct Docker package archive from [this page](https://www.ibm.com/developerworks/linux/linux390/docker.html).  For version 1.11.2 on RHEL 7.2:
+First, we will need to download the correct Docker package archive from [this page](https://www.ibm.com/developerworks/linux/linux390/docker.html).  For version 1.11.2 on RHEL 7.3:
 ```shell
-# wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.2/docker-1.11.2-rhel7.2-20160623.tar.gz
+# wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.3/docker-17.05.0-ce-rhel7.3-20170523.tar.gz
 ```
 
 Then, unpack the archive and copy the docker binarys:
 ```shell
-# tar -xzvf docker-1.11.2-rhel7.2-20160623.tar.gz
-# cp docker-1.11.2-rhel7.2-20160623/docker* /usr/local/bin/
+# tar -xzvf docker-17.05.0-ce-rhel7.3-20170523.tar.gz
+# cp docker-17.05.0-ce-rhel7.3-20170523/docker* /usr/local/bin/
 ```
 
 And then start the docker daemon:
