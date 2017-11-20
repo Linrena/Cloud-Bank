@@ -4,7 +4,7 @@ Open source software has expanded from a low-cost alternative to a platform for 
 
 LinuxONE was built for open source so you can harness the agility of the open revolution on the industry’s most secure, scalable and high-performing Linux server. In this journey we will show how to run open source Cloud-Native workloads on LinuxONE using Docker. We will show how existing LinuxONE docker images from docker hub can be used as is for deploying open source workloads. 
 
-If the desired images don't exist, we also show how you can create your own dokcer images for the workload. The z architecture has a different instruction set from the typical machines used in distributed environments. If the Dockerfile has build steps that build native code, the right platform of the compile flags must be used to make it work on LinuxONE, in addition to accounting for specific packages which can be used with LinuxONE. The second part of this Journey goes into those details.
+If the desired images don't exist, we also show how you can create your own docker images for the workload. The z architecture has a different instruction set from the typical machines used in distributed environments. If the Dockerfile has build steps that build native code, the right platform of the compile flags must be used to make it work on LinuxONE, in addition to accounting for specific packages which can be used with LinuxONE. The second part of this Journey goes into those details.
 
 ![linuxonedocker](images/linuxone-docker.png)
  
@@ -31,7 +31,7 @@ Register at [LinuxONE Community Cloud](https://developer.ibm.com/linuxone/) for 
 
 ## Scenario One: Use Docker images from Docker hub to run your workloads on LinuxONE
 
-[Docker Hub](https://hub.docker.com) makes it rather simple to get started with containers, as there are quite a few images ready to for your to use.  You can browse the list of images that are compatible with LinuxONE by doing a search on the ['s390x'](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=s390x&starCount=0) tag.
+[Docker Hub](https://hub.docker.com) makes it rather simple to get started with containers, as there are quite a few images ready for you to use.  You can browse the list of images that are compatible with LinuxONE by doing a search on the ['s390x'](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=s390x&starCount=0) tag.
 
 These instructions assume a base RHEL 7.3 image.
 
@@ -46,7 +46,7 @@ First, we will need to download the correct Docker package archive from [this pa
 # wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.3/docker-17.05.0-ce-rhel7.3-20170523.tar.gz
 ```
 
-Then, unpack the archive and copy the docker binarys:
+Then, unpack the archive and copy the docker binaries:
 ```shell
 # tar -xzvf docker-17.05.0-ce-rhel7.3-20170523.tar.gz
 # cp docker-17.05.0-ce-rhel7.3-20170523/docker* /usr/local/bin/
@@ -130,7 +130,7 @@ In our previous scenario, we used a couple of container images that had already 
 
 ### 1. Create your application base
 
-The MEAN stack is a combination of several packages starting with MongoDB - which is the most popular OSS NoSQL DB. The M*EAN* components stand for Express.js, Angular.js, Node.js. Node.js is a JavaScript runtime, Express.js is a server framework and Angular.js is an all-purpose MVC/MVVN framework. We will use this [blog](https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular) as a starting point. This blog is also useful if you're new to Angular.js/Express.js.
+The MEAN stack is a combination of several packages starting with MongoDB - which is the most popular OSS NoSQL DB. The M*EAN* components stand for Express.js, Angular.js and Node.js. Node.js is a JavaScript runtime, Express.js is a server framework and Angular.js is an all-purpose MVC/MVVN framework. We will use this [blog](https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular) as a starting point. This blog is also useful if you're new to Angular.js/Express.js.
 
 There are several proposed folder structures for MEAN apps based on best-practices but for this use-case, we'll keep things simple with the following (similar to the source blog):
 
@@ -163,11 +163,11 @@ services:
       - "27017:27017" # specify port forewarding
 ```
 
-To migrate the code into containers, we'll need to create a Dockerfile. The folder ```/usr/src``` in the container will store the JavaScript source code. As basic knowledge of Docker is assumed, we will not cover each step of the the [Dockerfile](files/mean-docker/express-server/Dockerfile).
+To migrate the code into containers, we'll need to create a Dockerfile. The folder ```/usr/src``` in the container will store the JavaScript source code. As basic knowledge of Docker is assumed, we will not cover each step of the [Dockerfile](files/mean-docker/express-server/Dockerfile).
 
 ### 2. LinuxONE containers for MongoDB and Node.js
 
-The main difference between using Docker on other platforms vs Docker on LinuxONE is the addition of the ```s390x/``` identifier in front of the container. e.g ibmnode becomes s390x/ibmnode. Occasionally, an image may not exist under the ```s390/``` group and to solve this, a simple dockerhub search of the container name followed by a ```s390x``` will suffice. e.g ```s390x nodejs```. Multi-arch support will come out of box in Docker later this year so the addition of the s390x tag is only temporary.
+The main difference between using Docker on other platforms vs Docker on LinuxONE is the addition of the ```s390x/``` identifier in front of the container. e.g ibmnode becomes s390x/ibmnode. Occasionally, an image may not exist under the ```s390/``` group and to solve this, a simple dockerhub search of the container name followed by a ```s390x``` will suffice. e.g ```s390x nodejs```. Multi-arch support will come out of the box in Docker later this year so the addition of the s390x tag is only temporary.
 
 ### 3. Start the MEAN stack on LinuxONE.
 
