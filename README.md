@@ -198,7 +198,7 @@ All customizations to the application can be made in the [express-server](files/
 
 ## Troubleshooting
 
-Errors seen in building the node.js application could potentially come from the use of deprecated or discontinued versions of npms that may occur depending on the time of tutorial completion. To fix this, modify the (mean-docker/blob/master/angular-client/package.json)[https://github.com/gangachris/mean-docker/blob/master/angular-client/package.json] for the F1 app or the (files/mean-docker/express-server/package.json)[files/mean-docker/express-server/package.json] file for the TODO app. Confirm Node.js v6 compatibility as some npms are not backward compatible.
+Errors seen in building the node.js application could potentially come from the use of deprecated or discontinued versions of npms that may occur depending on the time of tutorial completion. To fix this, modify [angular-client/package.json](https://github.com/gangachris/mean-docker/blob/master/angular-client/package.json) for the F1 app or the [express-server/package.json](files/mean-docker/express-server/package.json) file for the TODO app. Confirm Node.js v6 compatibility as some npms are not backward compatible.
 
 If containers are not able to talk to each other, the docker daemon may need to be restarted.  Use ```top``` to find the PID of the daemon, use ```kill -9``` to end that process and then start the docker daemon again.
 
