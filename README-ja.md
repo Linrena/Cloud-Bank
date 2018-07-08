@@ -200,7 +200,7 @@ database_1  | note: noprealloc may hurt performance in many applications
 
 リストに項目を追加したり削除したりすると、MongoDB からデータを保存/消去することができるはずです。これには RoboMongo を使用しましたが、任意の MongoDB クライアントを使用することができます。
 
-![robo-mongo](images/robomongo.png)
+![robo-mongo](images/robomongo.PNG)
 
 ### 4. アプリケーションのカスタマイズ
 
