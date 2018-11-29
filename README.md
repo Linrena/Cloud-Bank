@@ -198,6 +198,12 @@ As you add and remove things from your list, you should be able to see the data 
 
 All customizations to the application can be made in the [express-server](files/mean-docker/express-server/) folder. Angular.js changes (i.e view and controller) go in [express-server/public](files/mean-docker/express-server/public), Express.js (i.e model and api routes) changes go in [express-server/app](files/mean-docker/express-server/app/models). Then simply run the ```docker-compose down``` and ```docker-compose up``` to bring up the MEAN stack with your new code. You can do your application development on any platform, push to github, pull on LinuxONE and bring up the containers without needing any changes to your JavaScript code.
 
+## License
+
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+
+[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+
 ## Troubleshooting
 
 Errors seen in building the node.js application could potentially come from the use of deprecated or discontinued versions of npms that may occur depending on the time of tutorial completion. To fix this, modify [angular-client/package.json](https://github.com/gangachris/mean-docker/blob/master/angular-client/package.json) for the F1 app or the [express-server/package.json](files/mean-docker/express-server/package.json) file for the TODO app. Confirm Node.js v6 compatibility as some npms are not backward compatible.
@@ -237,3 +243,4 @@ ERROR: for database  Cannot start service database: driver failed programming ex
 28fca686fe): Bind for 0.0.0.0:27017 failed: port is already allocated
 ERROR: Encountered errors while bringing up the project.
 ```
+
