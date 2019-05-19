@@ -20,7 +20,7 @@
 	</style>
 
 	<!-- SPELLS -->
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
 
 	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
@@ -33,7 +33,7 @@
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
-			<h1>Hi let us build our app<span class="label label-info">{{ todos.length }}</span></h1>
+			<h1>Hi let us make an app for banks<span class="label label-info">{{ todos.length }}</span></h1>
 		</div>
 
 		<!-- TODO LIST -->
@@ -63,6 +63,9 @@
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 						<input type="text" class="form-control input-lg text-center" placeholder="todo's go here" ng-model="formData.text">
 
+
+
+						<input type="text" class="form-control " placeholder="todo's go here" ng-model="formData.value">
 
 
 					</div>
