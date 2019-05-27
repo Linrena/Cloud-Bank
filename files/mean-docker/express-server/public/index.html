@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<style>
 		html 					{ overflow-y:scroll; }
-		body 					{ padding-top:50px; }
-		#todo-list 				{ margin-bottom:30px; }
+		body 					{ padding-top:30px; }
+		#todo-list 				{ margin-bottom:40px; }
 		#todo-form 	 			{ margin-bottom:50px; }
 	</style>
 
@@ -73,11 +73,13 @@
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 						<p><strong>Fill in your information</strong></p>
 						
-						<p>First Name:
-						<input type="text" border-style:groove; border-width:5px; boreder-color:#909090; placeholder="First Name" ng-model="formData.text"></p>
+						<form>First Name:
+						<input type="text" border-style:groove; border-width:5px; boreder-color:#909090; placeholder="First Name" ng-model="formData.text">
+						</form>
 						
-						<p>Last Name:
-						<input type="text" border-style:groove; border-width:5px; boreder-color:#909090; placeholder="Last Name" ng-model="formData.text"></p>
+						<form>Last Name:
+						<input type="text" border-style:groove; border-width:5px; boreder-color:#909090; placeholder="Last Name" ng-model="formData.text">
+						</form>
 
 
 					</div>
