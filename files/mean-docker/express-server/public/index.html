@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-	<title>Node/Angular Todo App</title>
+	<title>Cloud Bank</title>
 
 	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
@@ -33,7 +33,7 @@
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
-			<h1>Hi let us make an app for banks<span class="label label-info">{{ todos.length }}</span></h1>
+			<h1>Welcome to Cloud Bank</h1>
 		</div>
 
 		<!-- TODO LIST -->
@@ -41,7 +41,7 @@
 			<div class="col-sm-4 col-sm-offset-4">
 
 				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-				<div class="checkbox" ng-repeat="todo in todos">
+				<div class="checkbox" ng-repeat="todo in todos">	
 					<label>
 						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
 					</label>
@@ -55,7 +55,7 @@
 		</div>
 
 		<!-- FORM TO CREATE TODOS -->
-		<div id="todo-form" class="row">
+		<div id="todo-form" class="row"> 
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
 					<div class="form-group">
@@ -65,7 +65,7 @@
 
 
 
-						<input type="text" class="form-control " placeholder="todo's go here" ng-model="formData.value">
+						<input type="text" class="form-control input-lg text-center " placeholder="todo's go here" ng-model="formData.text">
 
 
 					</div>
@@ -76,7 +76,7 @@
 			</div>
 		</div>
 		<div class="text-center text-muted">
-			<p>With ❤ from <a href="https://www.ibm.com/linuxone">LinuxONE</a></p>
+			<p>Copyright©2019-forever<a href="http://148.100.86.221:8080/">Cloud Bank</a></p>
 		</div>
 	</div>
 </body>
