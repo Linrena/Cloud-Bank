@@ -37,10 +37,10 @@
 		</div>
 
 		
-	<div>
+	<div class="jumbotron">
 		<p><strong>Please log in</strong></p>
-		<p>Account:</p><input type="number" placeholder="account number" ng-model="">
-		<p>Password:</p><input type="password" placeholder="password" ng-model="">
+		<p>Account:<input type="number" placeholder="account number" ng-model=""></p>
+		<p>Password:<input type="password" placeholder="password" ng-model=""></p>
 	</div>
 
 		<!-- TODO LIST -->
@@ -65,7 +65,7 @@
 
 		<!-- FORM TO CREATE TODOS -->
 		<div id="todo-form" class="row"> 
-			<div class="col-sm-8 col-sm-offset-2 text-center">
+			<div class="col-sm-8 col-sm-offset-2 ">
 				<form>
 					<div class="form-group">
 						
@@ -73,11 +73,11 @@
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 						<p><strong>Fill in your information</strong></p>
 						
-						<p>First Name:</p>
-						<input type="text"  placeholder="First Name" ng-model="formData.text">
+						<p>First Name:
+						<input type="text"  placeholder="First Name" ng-model="formData.text"></p>
 						
-						<p>Last Name:</p>
-						<input type="text"  placeholder="Last Name" ng-model="formData.text">
+						<p>Last Name:
+						<input type="text"  placeholder="Last Name" ng-model="formData.text"></p>
 
 
 					</div>
