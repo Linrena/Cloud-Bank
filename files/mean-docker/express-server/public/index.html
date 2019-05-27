@@ -36,11 +36,18 @@
 			<h1>Welcome to Cloud Bank</h1>
 		</div>
 
+		
+	<div>
+		<p><strong>Please log in</strong></p>
+		<p>Account:</p><input type="number" placeholder="account number" ng-model="">
+		<p>Password:</p><input type="password" placeholder="password" ng-model="">
+	</div>
+
 		<!-- TODO LIST -->
 		<div id="todo-list" class="row">
 			<div class="col-sm-4 col-sm-offset-4">
 
-				<!-- LOOP OVER THE TODOS IN $scope.todos -->
+				<!-- 
 				<div class="checkbox" ng-repeat="todo in todos">	
 					<label>
 						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
@@ -53,20 +60,23 @@
 
 			</div>
 		</div>
+			   LOOP OVER THE TODOS IN $scope.todos -->
+			   
 
 		<!-- FORM TO CREATE TODOS -->
 		<div id="todo-form" class="row"> 
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
 					<div class="form-group">
-
+						
+						<p><strong>No account? Register!</strong></p>
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 						<p><strong>Fill in your information</strong></p>
-						<br>
+						
+						<p>First Name:</p>
 						<input type="text"  placeholder="First Name" ng-model="formData.text">
-
-
-
+						
+						<p>Last Name:</p>
 						<input type="text"  placeholder="Last Name" ng-model="formData.text">
 
 
